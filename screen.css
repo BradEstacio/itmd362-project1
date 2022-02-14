@@ -1,0 +1,6 @@
+h1:after {
+  content: " ";
+  display: block;
+  border-bottom: 1px solid #9E9E9E;
+  width: 65%;
+}
