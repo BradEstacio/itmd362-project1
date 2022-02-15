@@ -5,11 +5,6 @@ h1:after {
   width: 65%;
 }
 
-h2 {
-  display: inline;
-  margin-right: 100px;
-}
-
 label {
   display: block;
 }
