@@ -8,3 +8,7 @@ h1:after {
 label {
   display: block;
 }
+
+input {
+  display: block;
+}
