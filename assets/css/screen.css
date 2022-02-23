@@ -49,3 +49,9 @@ a.button {
   color: initial;
   background-color: #D3D3D3;
 }
+
+button {
+  padding: 10px 16px;
+  font-size: 16px;
+  margin-top: 10px;
+}
