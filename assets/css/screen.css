@@ -12,6 +12,13 @@ html {
   line-height: 34px;
 }
 
+h1 {
+  font-size: 34px;
+  line-height: 36px;
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+
 h1:after {
   content: " ";
   display: block;
