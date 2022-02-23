@@ -35,6 +35,8 @@ label {
 input {
   display: block;
   margin-bottom: 5px;
+  font-size: inherit;
+  font-family: inherit;
 }
 
 a.button {
