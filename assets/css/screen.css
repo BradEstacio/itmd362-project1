@@ -59,3 +59,8 @@ button {
   font-size: 16px;
   margin-top: 10px;
 }
+
+.shipping-is-billing {
+  display: flex;
+  align-items: baseline;
+}
