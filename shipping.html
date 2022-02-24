@@ -19,10 +19,14 @@
   <form aria-labelledby="shipping" action="" method="post">
     <h1 id="shipping">Shipping</h1>
 
-    <li>
-      <input type="checkbox" name="same-billing" id="same-billing">
-      <label for="same-billing">My shipping address is the same as my billing address</label>
-    </li>
+    <fieldset name="shipping-is-billing">
+      <ol>
+        <li class="shipping-is-billing">
+          <input type="checkbox" name="same-billing" id="same-billing">
+          <label for="same-billing">My shipping address is the same as my billing address</label>
+        </li>
+      </ol>
+    </fieldset>
   </form>
 </body>
 </html>
