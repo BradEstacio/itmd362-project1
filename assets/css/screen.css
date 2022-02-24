@@ -10,8 +10,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 html {
   font-size: 16px;
   line-height: 30px;
-  margin-top: 24px;
-  margin-left: 20px;
+  margin: 24px 20px 20px 24px;
 }
 
 h1 {
