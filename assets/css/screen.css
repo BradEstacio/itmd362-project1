@@ -20,7 +20,7 @@ h1 {
   margin-top: 24px;
 }
 
-h1:after {
+h1.break {
   content: " ";
   display: block;
   border-bottom: 1px solid #9E9E9E;
