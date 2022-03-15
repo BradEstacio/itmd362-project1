@@ -20,41 +20,73 @@
     </nav>
   </header>
 
-    <label for="card-number">Card Number</label>
-    <input type="text" name="card-number" id="card-number" required="required">
+  <main>
+    <a href="../" class="button">Back to Home Page</a>
 
-    <label for="expiration">Expiration Date</label>
-    <select name="expiration-month" id="expiration" required="required">
-      <option value="">MM</option>
-      <option value="01">01</option>
-      <option value="02">02</option>
-      <option value="03">03</option>
-      <option value="04">04</option>
-      <option value="05">05</option>
-      <option value="06">06</option>
-      <option value="07">07</option>
-      <option value="08">08</option>
-      <option value="09">09</option>
-      <option value="10">10</option>
-      <option value="11">11</option>
-      <option value="12">12</option>
-    </select>
-    </select>
-    <select type="text" name="expiration-year" id="expiration" required="required">
-        <option value="">YY</option>
-        <option value="22">22</option>
-        <option value="23">23</option>
-        <option value="24">24</option>
-        <option value="25">25</option>
-        <option value="26">26</option>
-        <option value="27">27</option>
-        <option value="28">28</option>
-    </select>
+    <h1 class="line">CART</h1>
+    <ul>
+      <li>Albuca spiralis - $10.49</li>
+      <li>Echeveria "Perle von Nurnberg" - $4.99</li>
+      <li>Kalanchoe tomentosa "Panda Plant" - $4.99</li>
+      <li>Adromischus cristatus "Crinkle-Leaf Plant" - $4.99</li>
+      <li>Cereus forbesii monstrose "Ming Thing" - $9.49</li>
+      <li>Senecio rowleyanus "String of Pearls" - $4.99</li>
+    </ul>
 
-    <label for="cvv">CVV</label>
-    <input type="text" name="cvv" id="cvv" required="required">
+    <form name="payment" action="../billing/" method="get" aria-labelledby="form-label" aria-live="polite" aria-relevant="additions">
+      <h1 id="payment" class="line">Payment</h1>
 
-    <button type="submit">To Billing</button>
-  </form>
+      <ol>
+        <li>
+          <label for="name-card">Name on Card</label>
+          <input type="text" name="name-card" id="name-card" autocomplete="name" required="required">
+        </li>
+        <li>
+          <label for="card-number">Card Number</label>
+          <input type="text" name="card-number" id="card-number" required="required">
+        </li>
+        <li>
+          <label for="expiration">Expiration Date</label>
+          <select name="expiration-month" id="expiration" required="required">
+            <option value="">MM</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+          </select>
+          <select type="text" name="expiration-year" id="expiration" required="required">
+              <option value="">YY</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+              <option value="32">32</option>
+          </select>
+        </li>
+        <li>
+          <label for="cvv">CVV</label>
+          <input type="text" name="cvv" id="cvv" required="required">
+        </li>
+        <li>
+          <button type="submit">To Billing</button>
+        </li>
+      </ol>
+    </form>
+  </main>
+  <script type="../assets/js/site.js"></script>
 </body>
 </html>
