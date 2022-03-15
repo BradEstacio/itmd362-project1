@@ -10,12 +10,13 @@
 </head>
 <body>
   <header id="header">
+    <h1>Simple Succulent Shop</h1>
     <nav>
       <ul>
-        <li><a href="../">Home</a></li>
-        <li><a href="">Cart and Payment</a></li>
-        <li><a href="../billing/">Billing</a></li>
-        <li><a href="../shipping/">Shipping</a></li>
+        <li><a id="home" href="../">Home</a></li>
+        <li><a id="cart-and-payment" href="">Cart and Payment</a></li>
+        <li><a id="billing" href="../billing/">Billing</a></li>
+        <li><a id="shipping" href="../shipping/">Shipping</a></li>
       </ul>
     </nav>
   </header>
@@ -23,15 +24,17 @@
   <main>
     <a href="../" class="button">Back to Home Page</a>
 
-    <h1 class="line">CART</h1>
-    <ul>
-      <li>Albuca spiralis - $10.49</li>
-      <li>Echeveria "Perle von Nurnberg" - $4.99</li>
-      <li>Kalanchoe tomentosa "Panda Plant" - $4.99</li>
-      <li>Adromischus cristatus "Crinkle-Leaf Plant" - $4.99</li>
-      <li>Cereus forbesii monstrose "Ming Thing" - $9.49</li>
-      <li>Senecio rowleyanus "String of Pearls" - $4.99</li>
-    </ul>
+    <aside id="cart">
+      <h1 class="line">CART</h1>
+      <ul>
+        <li>Albuca spiralis - $10.49</li>
+        <li>Echeveria "Perle von Nurnberg" - $4.99</li>
+        <li>Kalanchoe tomentosa "Panda Plant" - $4.99</li>
+        <li>Adromischus cristatus "Crinkle-Leaf Plant" - $4.99</li>
+        <li>Cereus forbesii monstrose "Ming Thing" - $9.49</li>
+        <li>Senecio rowleyanus "String of Pearls" - $4.99</li>
+      </ul>
+    </aside>
 
     <form name="payment" action="../billing/" method="get" aria-labelledby="form-label" aria-live="polite" aria-relevant="additions">
       <h1 id="payment" class="line">Payment</h1>
