@@ -3,64 +3,116 @@
    License: none (public domain)
 */
 /* stylelint-disable*/
-a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}html{line-height:1}body{line-height:inherit}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}html{}body{line-height:inherit}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
 /* stylelint-enable */
 
 /* Begin site styles below */
+
+/* Color palette used: https://paletton.com/#uid=32F0u0k7itu2AGw4JxSahqrdFnz */
+
 html {
-  font-size: 16px;
-  line-height: 30px;
-  margin: 10px 20px 20px 24px;
+  font-family: 'Merriweather', 'Rubik';
+  line-height: 22px;
+  background: #FFF2EA;
+}
+
+main {
+  padding: 18px;
+}
+
+header {
+  font-family: 'Merriweather', serif;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 36px;
+  background: #AECC9E;
+  padding: 18px;
 }
 
 h1 {
+  font-family: 'Merriweather', serif;
   font-size: 34px;
-  line-height: 36px;
-  margin-bottom: 20px;
-  margin-top: 24px;
+  line-height: 32px;
+  padding-top: 22px;
+  margin-bottom: 12px;
 }
 
-h1.break {
-  content: " ";
-  display: block;
-  border-bottom: 1px solid #9E9E9E;
-  width: 175px;
+a {
+  font-family: inherit;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+section,
+select,
+button {
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 6px;
 }
 
 label {
+  font-family: 'Rubik', sans-serif;
+  font-size: 18px;
+  padding: 6px 0px 3px;
   display: block;
 }
 
-input {
-  display: block;
-  margin-bottom: 5px;
-  font-size: inherit;
-  font-family: inherit;
-  line-height: inherit;
+input[type="number"] {
+  -webkit-outer-spin-button: none;
+  -webkit-inner-spin-button: none;
+  -moz-appearance: textfield;
+  appearance: textfield:
 }
 
-a.button {
+input[name="cvv"] {
+  width: 32px;
+}
+
+input[name="card-number"] {
+  width: 164px;
+}
+
+.line {
+  display: block;
+  border-bottom: 1px solid #9E9E9E;
+  width: auto;
+}
+
+.nav-button {
   -webkit-appearance: button;
   -moz-appearance: button;
   appearance: button;
 
-  display: inline-block;
-  padding: 12px 16px;
-  font-size: 16px;
-  text-align: center;
-  text-decoration: none;
+  padding: 8px 8px;
+  line-height: 42px;
   color: initial;
-  background-color: #D3D3D3;
 }
 
-button {
-  padding: 10px 16px;
-  font-size: 16px;
-  margin-top: 10px;
-  margin-bottom: 15px;
+.nav-button:hover {
+  background-color: #76A35E;
 }
 
-.shipping-is-billing {
-  display: flex;
-  align-items: baseline;
+.back-button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+
+  font-family: 'Rubik', sans-serif;
+  display: inline-block;
+  padding: 10px 12px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  font-size: 17px;
+  text-align: center;
+  color: white;
+  background-color: #A882A1;
+}
+
+.back-button:hover {
+  background-color: #864D7C;
 }
