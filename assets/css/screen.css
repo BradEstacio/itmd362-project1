@@ -80,6 +80,14 @@ input[name="card-number"] {
   width: 164px;
 }
 
+input[name="billing-zip"], input[name="shipping-zip"] {
+  width: 64px;
+}
+
+input[name="billing-phone"], input[name="shipping-phone"] {
+  width: 90px;
+}
+
 .line {
   display: block;
   border-bottom: 1px solid #9E9E9E;
