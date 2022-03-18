@@ -88,6 +88,10 @@ input[name="billing-phone"], input[name="shipping-phone"] {
   width: 90px;
 }
 
+fieldset[aria-hidden="true"] {
+  display: none;
+}
+
 .line {
   display: block;
   border-bottom: 1px solid #9E9E9E;
