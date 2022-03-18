@@ -12,7 +12,7 @@
   <header id="header">
     <h1>Simple Succulent Shop</h1>
     <nav>
-      <ul>
+      <ul id="nav-buttons">
         <li><a class="nav-button" id="home" href="../">Home</a></li>
         <li><a class="nav-button" id="cart-and-payment" href="">Cart and Payment</a></li>
         <li><a class="nav-button" id="billing" href="../billing/">Billing</a></li>
@@ -21,26 +21,28 @@
     </nav>
   </header>
 
-  <aside id="summary">
-    <h1 class="line">Summary</h1>
-    <ul>
-      <li>Item Total: $39.94</li>
-      <li>Tax: $2.40</li>
-      <li>Shipping: $5.00</li>
-      <li>Total: $47.34</li>
-    </ul>
-  </aside>
-
   <main id="main">
-    <a href="../billing/" class="back-button">Back to Billing</a>
+    <a href="../billing/" class="back-button" id="back-button">Back to Billing</a>
 
-    <form name="shipping" action="../" method="get" aria-labelledby="form-label" aria-live="polite" aria-relevant="additions">
-      <h1 id="shipping" class="line">Shipping</h1>
+    <aside id="summary">
+      <h1 class="line">Summary</h1>
+      <section>
+        <ul>
+          <li>Item Total: $39.94</li>
+          <li>Tax: $2.40</li>
+          <li>Shipping: $----</li>
+          <li>Total: $47.34</li>
+        </ul>
+      </section>
+    </aside>
+
+    <form name="shipping" id="form" action="../" method="get" aria-labelledby="form-label" aria-live="polite" aria-relevant="additions">
+      <h1 class="line">Shipping</h1>
 
       <fieldset name="shipping-is-billing">
         <ol>
           <li>
-            <input type="checkbox" name="shipping-is-billing" id="shipping-is-billing" checked>
+            <input type="checkbox" name="shipping-is-billing" id="shipping-is-billing" checked="checked">
             <label for="shipping-is-billing">My shipping address is the same as my billing address</label>
           </li>
         </ol>

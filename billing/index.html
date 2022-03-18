@@ -10,9 +10,9 @@
 </head>
 <body>
   <header id="header">
-    <h1>Simple Succulent Shop</h1>
+    <h1 id="shop-name">Simple Succulent Shop</h1>
     <nav>
-      <ul>
+      <ul id="nav-buttons">
         <li><a class="nav-button" id="home" href="../">Home</a></li>
         <li><a class="nav-button" id="cart-and-payment" href="../payment">Cart and Payment</a></li>
         <li><a class="nav-button" id="billing" href="">Billing</a></li>
@@ -21,23 +21,23 @@
     </nav>
   </header>
 
-  <aside id="summary">
-    <h1 class="line">Summary</h1>
-    <section id="prices">
-      <ul>
-        <li>Item Total: $39.94</li>
-        <li>Tax: $2.40</li>
-        <li>Shipping: $5.00</li>
-        <li>Total: $47.34</li>
-      </ul>
-    </section>
-  </aside>
-
   <main id="main">
-    <a href="../payment/" class="back-button">Back to Payment</a>
+    <a href="../payment/" class="back-button" id="back-button">Back to Payment</a>
 
-    <form name="billing" action="../shipping/" method="get" aria-labelledby="form-label" aria-live="polite" aria-relevant="additions">
-      <h1 id="billing" class="line">Billing</h1>
+    <aside id="summary">
+      <h1 class="line">Summary</h1>
+      <section>
+        <ul>
+          <li>Item Total: $39.94</li>
+          <li>Tax: $2.40</li>
+          <li>Shipping: $5.00</li>
+          <li>Total: $47.34</li>
+        </ul>
+      </section>
+    </aside>
+
+    <form name="billing" id="form" action="../shipping/" method="get" aria-labelledby="form-label" aria-live="polite" aria-relevant="additions">
+      <h1 class="line">Billing</h1>
 
       <ol>
         <li>

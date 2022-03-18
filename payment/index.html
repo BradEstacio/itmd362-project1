@@ -10,9 +10,9 @@
 </head>
 <body>
   <header id="header">
-    <h1>Simple Succulent Shop</h1>
+    <h1 id="shop-name">Simple Succulent Shop</h1>
     <nav>
-      <ul>
+      <ul id="nav-buttons">
         <li><a class="nav-button" id="home" href="../">Home</a></li>
         <li><a class="nav-button" id="cart-and-payment" href="">Cart and Payment</a></li>
         <li><a class="nav-button" id="billing" href="../billing/">Billing</a></li>
@@ -22,12 +22,12 @@
   </header>
 
   <main id="main">
-    <a href="../" class="back-button">Back to Home Page</a>
+    <a href="../" class="back-button" id="back-button">Back to Home Page</a>
 
-    <aside id="cart">
+    <aside id="summary">
       <h1 class="line">Cart</h1>
       <section id="items">
-        <ul>
+        <ul name="cart-list">
           <li>Albuca spiralis <p id="price">- $10.49</p></li>
           <li>Echeveria "Perle von Nurnberg" <p id="price">- $4.99</p></li>
           <li>Kalanchoe tomentosa "Panda Plant" <p id="price">- $4.99</p></li>
@@ -38,8 +38,8 @@
       </section>
     </aside>
 
-    <form name="payment" action="../billing/" method="get" aria-labelledby="form-label" aria-live="polite" aria-relevant="additions">
-      <h1 id="payment" class="line">Payment</h1>
+    <form name="payment" id="form" action="../billing/" method="get" aria-labelledby="form-label" aria-live="polite" aria-relevant="additions">
+      <h1 class="line">Payment</h1>
 
       <ol>
         <li>
