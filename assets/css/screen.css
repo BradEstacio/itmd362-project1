@@ -67,6 +67,10 @@ input[type="number"] {
   appearance: textfield:
 }
 
+input[type="tel"] {
+  width: 90px;
+}
+
 input[type="checkbox"], label[for="shipping-is-billing"] {
   display: inline;
   vertical-align: middle;
@@ -82,10 +86,6 @@ input[name="card-number"] {
 
 input[name="billing-zip"], input[name="shipping-zip"] {
   width: 64px;
-}
-
-input[name="billing-phone"], input[name="shipping-phone"] {
-  width: 90px;
 }
 
 fieldset[aria-hidden="true"] {
