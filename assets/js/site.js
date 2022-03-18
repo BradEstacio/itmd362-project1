@@ -1,21 +1,37 @@
 'use strict';
 
-var newAddressFieldset = document.querySelector('fieldset[name="shipping-address"]');
-var newAddressCheckbox = document.querySelector('#shipping-is-billing');
+var html = document.querySelector('html')
 
-newAddressFieldset.setAttribute('disabled', 'disabled');
-newAddressFieldset.setAttribute('aria-hidden', 'true');
+// Add a `js` class for any JavaScript-dependent CSS
+// See https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
+html.classList.add('js');
 
-newAddressCheckbox.addEventListener('change', function(event) {
-  // Add logic to set values only on checked state
-  if(event.target.checked) {
-    newAddressFieldset.setAttribute('disabled', 'disabled');
-    newAddressFieldset.setAttribute('aria-hidden', 'true');
-  } else {
-    newAddressFieldset.removeAttribute('disabled');
-    newAddressFieldset.setAttribute('aria-hidden', 'false');
-  }
-});
+if(html.id === 'payment') {
+
+}
+
+if(html.id === 'billing') {
+
+}
+
+if(html.id === 'shipping') {
+  var newAddressFieldset = document.querySelector('fieldset[name="shipping-address"]');
+  var newAddressCheckbox = document.querySelector('#shipping-is-billing');
+
+  newAddressFieldset.setAttribute('disabled', 'disabled');
+  newAddressFieldset.setAttribute('aria-hidden', 'true');
+
+  newAddressCheckbox.addEventListener('change', function(event) {
+    // Add logic to set values only on checked state
+    if(event.target.checked) {
+      newAddressFieldset.setAttribute('disabled', 'disabled');
+      newAddressFieldset.setAttribute('aria-hidden', 'true');
+    } else {
+      newAddressFieldset.removeAttribute('disabled');
+      newAddressFieldset.setAttribute('aria-hidden', 'false');
+    }
+  });
+}
 
 /*
   Utility Functions
