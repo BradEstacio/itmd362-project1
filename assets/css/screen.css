@@ -12,7 +12,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
 html {
   font-family: 'Merriweather', 'Rubik';
-  line-height: 22px;
+  line-height: 25px;
   background: #FFF2EA;
 }
 
@@ -43,9 +43,7 @@ a {
   border-radius: 8px;
 }
 
-section,
-select,
-button {
+section, select, button {
   font-family: 'Rubik', sans-serif;
   font-size: 16px;
 }
@@ -67,6 +65,11 @@ input[type="number"] {
   -webkit-inner-spin-button: none;
   -moz-appearance: textfield;
   appearance: textfield:
+}
+
+input[type="checkbox"], label[for="shipping-is-billing"] {
+  display: inline;
+  vertical-align: middle;
 }
 
 input[name="cvv"] {
@@ -115,4 +118,117 @@ input[name="card-number"] {
 
 .back-button:hover {
   background-color: #864D7C;
+}
+
+#shop-name {
+  width: auto;
+}
+
+@media screen and (min-width: 500px) {
+  header {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: [shop-name]
+    auto [home cart-and-payment billing shipping] 11.5em;
+    column-gap: 5em;
+  }
+
+  #shop-name {
+    grid-area: shop-name;
+    grid-row: span 1;
+    grid-column: span 1;
+  }
+
+  #home {
+    grid-area: home;
+  }
+
+  #cart-and-payment {
+    grid-area: cart-and-payment;
+  }
+
+  #billing {
+    grid-area: billing;
+  }
+
+  #shipping {
+    grid-area: shipping;
+  }
+
+  #price {
+    display: inline-grid;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  main {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: [back-button-start form-start] auto [back-button-end form-end]
+    auto [summary-start];
+  }
+
+  #nav-buttons {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+
+  #home {
+    display: inline-grid;
+    grid-row: span 1;
+    grid-column: span 1;
+  }
+
+  #cart-and-payment {
+    grid-area: cart-and-payment;
+    display: inline-grid;
+    grid-row: span 1;
+    grid-column: span 1;
+  }
+
+  #billing {
+    display: inline-grid;
+    grid-row: span 1;
+    grid-column: span 1;
+  }
+
+  #shipping {
+    display: inline-grid;
+    grid-row: span 1;
+    grid-column: span 1;
+  }
+
+  #price {
+    grid-column: span 1;
+  }
+
+  #summary {
+    grid-area: summary;
+  }
+
+  #main {
+    grid-area: main;
+  }
+
+  #form {
+    grid-area: form;
+  }
+
+  #back-button {
+    display: inline-grid;
+    grid-area: back-button;
+    grid-row: auto;
+    width: 154.1px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  header {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: [shop-name]
+    auto [home cart-and-payment billing shipping] auto;
+    column-gap: 5em;
+  }
 }
