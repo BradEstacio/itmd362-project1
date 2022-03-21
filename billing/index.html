@@ -2,8 +2,6 @@
 <html lang="en" id="billing">
 <head>
   <title>Billing</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Rubik&display=swap" rel="stylesheet">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
   <link rel="stylesheet" href="../assets/css/screen.css" />
@@ -13,10 +11,10 @@
     <h1 id="shop-name">Simple Succulent Shop</h1>
     <nav>
       <ul id="nav-buttons">
-        <li><a class="nav-button" id="home" href="../">Home</a></li>
-        <li><a class="nav-button" id="cart-and-payment" href="../payment">Cart and Payment</a></li>
-        <li><a class="nav-button" id="billing" href="">Billing</a></li>
-        <li><a class="nav-button" id="shipping" href="../shipping/">Shipping</a></li>
+        <li><a class="nav-button" id="home-nav" href="../">Home</a></li>
+        <li><a class="nav-button" id="cart-and-payment-nav" href="../payment">Cart and Payment</a></li>
+        <li><a class="nav-button" id="billing-nav" href="">Billing</a></li>
+        <li><a class="nav-button" id="shipping-nav" href="../shipping/">Shipping</a></li>
       </ul>
     </nav>
   </header>
@@ -42,19 +40,19 @@
       <ol>
         <li>
           <label for="billing-name">Name</label>
-          <input type="text" name="billing-name" id="billing-name" autocomplete="name" required>
+          <input type="text" name="billing-name" id="billing-name" autocomplete="name" required />
         </li>
         <li>
           <label for="billing-address">Street Address</label>
-          <input type="text" name="billing-address" id="billing-address" autocomplete="street-address" required>
+          <input type="text" name="billing-address" id="billing-address" autocomplete="street-address" required />
         </li>
         <li>
           <label for="billing-address-two">Apartment, Suite, etc. (Optional)</label>
-          <input type="text" name="billing-address-two" id="billing-address-two">
+          <input type="text" name="billing-address-two" id="billing-address-two" />
         </li>
         <li>
           <label for="billing-city">City</label>
-          <input type="text" name="billing-city" id="billing-city" autocomplete="address-level2" required>
+          <input type="text" name="billing-city" id="billing-city" autocomplete="address-level2" required />
         </li>
         <li>
           <label for="billing-state">State</label>
@@ -115,11 +113,11 @@
         </li>
         <li>
           <label for="billing-zip">Zip Code</label>
-          <input type="number" name="billing-zip" id="billing-zip" autocomplete="postal-code" required>
+          <input type="number" name="billing-zip" id="billing-zip" autocomplete="postal-code" required />
         </li>
         <li>
           <label for="billing-phone">Phone Number</label>
-          <input type="tel" name="billing-phone" id="billing-phone" autocomplete="tel" required>
+          <input type="tel" name="billing-phone" id="billing-phone" autocomplete="tel" required />
         </li>
         <li>
           <button type="submit" id="submit">To Shipping</button>

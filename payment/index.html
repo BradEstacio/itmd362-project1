@@ -2,8 +2,6 @@
 <html lang="en" id="payment">
 <head>
   <title>Cart and Payment</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Rubik&display=swap" rel="stylesheet">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
   <link rel="stylesheet" href="../assets/css/screen.css" />
@@ -13,10 +11,10 @@
     <h1 id="shop-name">Simple Succulent Shop</h1>
     <nav>
       <ul id="nav-buttons">
-        <li><a class="nav-button" id="home" href="../">Home</a></li>
-        <li><a class="nav-button" id="cart-and-payment" href="">Cart and Payment</a></li>
-        <li><a class="nav-button" id="billing" href="../billing/">Billing</a></li>
-        <li><a class="nav-button" id="shipping" href="../shipping/">Shipping</a></li>
+        <li><a class="nav-button" id="home-nav" href="../">Home</a></li>
+        <li><a class="nav-button" id="cart-and-payment-nav" href="">Cart and Payment</a></li>
+        <li><a class="nav-button" id="billing-nav" href="../billing/">Billing</a></li>
+        <li><a class="nav-button" id="shipping-nav" href="../shipping/">Shipping</a></li>
       </ul>
     </nav>
   </header>
@@ -29,11 +27,11 @@
       <section id="items">
         <ul name="cart-list">
           <li>Albuca spiralis <p id="price">- $10.49</p></li>
-          <li>Echeveria "Perle von Nurnberg" <p id="price">- $4.99</p></li>
-          <li>Kalanchoe tomentosa "Panda Plant" <p id="price">- $4.99</p></li>
-          <li>Adromischus cristatus "Crinkle-Leaf Plant" <p id="price">- $4.99</p></li>
-          <li>Cereus forbesii monstrose "Ming Thing" <p id="price">- $9.49</p></li>
-          <li>Senecio rowleyanus "String of Pearls" <p id="price">- $4.99</p></li>
+          <li>Echeveria "Perle von Nurnberg" <p>- $4.99</p></li>
+          <li>Kalanchoe tomentosa "Panda Plant" <p>- $4.99</p></li>
+          <li>Adromischus cristatus "Crinkle-Leaf Plant" <p>- $4.99</p></li>
+          <li>Cereus forbesii monstrose "Ming Thing" <p>- $9.49</p></li>
+          <li>Senecio rowleyanus "String of Pearls" <p>- $4.99</p></li>
         </ul>
       </section>
     </aside>
@@ -44,11 +42,11 @@
       <ol>
         <li>
           <label for="name-card">Name on Card</label>
-          <input type="text" name="name-card" id="name-card" autocomplete="name" required>
+          <input type="text" name="name-card" id="name-card" autocomplete="name" required />
         </li>
         <li>
           <label for="card-number">Card Number</label>
-          <input type="number" name="card-number" id="card-number" required>
+          <input type="number" name="card-number" id="card-number" required />
         </li>
         <li>
           <label for="expiration">Expiration Date</label>
@@ -67,7 +65,7 @@
             <option value="11">11</option>
             <option value="12">12</option>
           </select>
-          <select type="text" name="expiration-year" id="expiration" required>
+          <select type="text" name="expiration-year" id="expiration-year" required>
               <option value="">YY</option>
               <option value="22">22</option>
               <option value="23">23</option>
@@ -84,7 +82,7 @@
         </li>
         <li>
           <label for="cvv">CVV</label>
-          <input type="number" name="cvv" id="cvv" required>
+          <input type="number" name="cvv" id="cvv" required />
         </li>
         <li>
           <button type="submit" id="submit">To Billing</button>

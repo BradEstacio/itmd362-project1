@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Rubik&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Rubik&display=swap");
 
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
 /* stylelint-disable*/
-a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}html{}body{line-height:inherit}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}html,.linter{line-height:1}body{line-height:inherit}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
 /* stylelint-enable */
 
 /* Begin site styles below */
@@ -13,7 +13,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 /* Color palette used: https://paletton.com/#uid=32F0u0k7itu2AGw4JxSahqrdFnz */
 
 html {
-  font-family: 'Merriweather', 'Rubik';
+  font-family: Merriweather, serif, Rubik, sans-serif;
   line-height: 1.5625em; /* 25px / 16px = 1.5625em */
   background: #FFF2EA;
 }
@@ -23,7 +23,7 @@ main {
 }
 
 header {
-  font-family: 'Merriweather', serif;
+  font-family: Merriweather, serif;
   font-size: 1.125em; /* 18px / 16px = 1.125em */
   font-weight: bold;
   line-height: 1.44em; /* 23.04px / 16px = 2.25em */
@@ -32,7 +32,7 @@ header {
 }
 
 h1 {
-  font-family: 'Merriweather', serif;
+  font-family: Merriweather, serif;
   font-size: 2.125em; /* 34px / 16px = 2.125em */
   line-height: 1em; /* 16px = 1em */
   padding-top: 0.75em;
@@ -46,7 +46,7 @@ a {
 }
 
 section, select, button {
-  font-family: 'Rubik', sans-serif;
+  font-family: Rubik, sans-serif;
   font-size: 1em; /* 16px / 16px = 1em */
 }
 
@@ -56,9 +56,9 @@ button {
 }
 
 label {
-  font-family: 'Rubik', sans-serif;
+  font-family: Rubik, sans-serif;
   font-size: 1.125em; /* 18px / 16px */
-  padding: 0.375em 0em 0.1875em; /* 6px / 16px, 0px / 16px = 0em, 3px / 16px = 0.1875em */
+  padding: 0.375em 0 0.1875em; /* 6px / 16px, 0px / 16px = 0em, 3px / 16px = 0.1875em */
   display: block;
 }
 
@@ -66,7 +66,7 @@ input[type="number"] {
   -webkit-outer-spin-button: none;
   -webkit-inner-spin-button: none;
   -moz-appearance: textfield;
-  appearance: textfield:
+  appearance: textfield;
 }
 
 input[type="tel"] {
@@ -119,7 +119,7 @@ fieldset[aria-hidden="true"] {
   -moz-appearance: button;
   appearance: button;
 
-  font-family: 'Rubik', sans-serif;
+  font-family: Rubik, sans-serif;
   display: inline-block;
   padding: 0.625em 0.75em; /* 10px / 16px = 0.625em, 12px / 16px */
   margin-top: 0.875em; /* 14px / 16px = 0.875em */
@@ -143,8 +143,7 @@ fieldset[aria-hidden="true"] {
   header {
     display: grid;
     grid-template-rows: auto auto;
-    grid-template-columns: [shop-name]
-    auto [home cart-and-payment billing shipping] 11.5em;
+    grid-template-columns: [shop-name] auto [home-nav cart-and-payment-nav billing-nav shipping-nav] 11.5em;
     column-gap: 5em;
   }
 
@@ -154,20 +153,20 @@ fieldset[aria-hidden="true"] {
     grid-column: span 1;
   }
 
-  #home {
-    grid-area: home;
+  #home-nav {
+    grid-area: home-nav;
   }
 
-  #cart-and-payment {
-    grid-area: cart-and-payment;
+  #cart-and-payment-nav {
+    grid-area: cart-and-payment-nav;
   }
 
-  #billing {
-    grid-area: billing;
+  #billing-nav {
+    grid-area: billing-nav;
   }
 
   #shipping {
-    grid-area: shipping;
+    grid-area: shipping-nav;
   }
 
   p {
@@ -180,8 +179,7 @@ fieldset[aria-hidden="true"] {
   main {
     display: grid;
     grid-template-rows: auto auto;
-    grid-template-columns: [back-button-start form-start] auto [back-button-end form-end]
-    auto [summary-start];
+    grid-template-columns: [back-button-start form-start] auto [back-button-end form-end] auto [summary-start];
   }
 
   #nav-buttons {
@@ -190,26 +188,25 @@ fieldset[aria-hidden="true"] {
     justify-content: space-between;
   }
 
-  #home {
+  #home-nav {
     display: inline-grid;
     grid-row: span 1;
     grid-column: span 1;
   }
 
-  #cart-and-payment {
-    grid-area: cart-and-payment;
+  #cart-and-payment-nav {
     display: inline-grid;
     grid-row: span 1;
     grid-column: span 1;
   }
 
-  #billing {
+  #billing-nav {
     display: inline-grid;
     grid-row: span 1;
     grid-column: span 1;
   }
 
-  #shipping {
+  #shipping-nav {
     display: inline-grid;
     grid-row: span 1;
     grid-column: span 1;
@@ -235,12 +232,12 @@ fieldset[aria-hidden="true"] {
   }
 }
 
-@media screen and (min-width: 960px) {
+/* 960px / 16px = 60em */
+@media screen and (min-width: 60em) {
   header {
     display: grid;
     grid-template-rows: auto auto;
-    grid-template-columns: [shop-name]
-    auto [home cart-and-payment billing shipping] auto;
+    grid-template-columns: [shop-name] auto [home-nav cart-and-payment-nav billing-nav shipping-nav] auto;
     column-gap: 5em;
   }
 }
