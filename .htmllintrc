@@ -28,7 +28,7 @@
     "line-max-len": 150, // No super-long lines...
     "line-max-len-ignore-regex": "href", // ...unless they are href values
     "spec-char-escape": true, // XML special characters (<,>,&,etc.) must be escaped
-    "tag-bans": ["acronym", "big", "blink", "br", "button", "center", "div", "font", "frame", "frameset", "hr", "iframe", "style"],
+    "tag-bans": ["acronym", "big", "blink", "br", "center", "div", "font", "frame", "frameset", "hr", "iframe", "style"],
     "tag-close": true, // tags that open must close
     "tag-name-lowercase": true, // only lowercase for tag names
     "tag-name-match": true, // tag names must match, in both name and case
