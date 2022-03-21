@@ -27,18 +27,19 @@
     },
     {
       "label": "Empty payment page",
-      "url": "http://localhost:8080/payment",
+      "url": "http://localhost:8080/payment/",
       "misMatchThreshold" : 0.1
     },
     {
       "label": "Empty billing page",
-      "url": "http://localhost:8080/billing",
+      "url": "http://localhost:8080/billing/",
       "misMatchThreshold" : 0.1
     },
     {
       "label": "Empty shipping page",
-      "url": "http://localhost:8080/shipping",
-      "misMatchThreshold" : 0.1
+      "url": "http://localhost:8080/shipping/",
+      "misMatchThreshold" : 0.1,
+      "clickSelector": "#shipping-is-billing"
     }
   ],
   "paths": {
