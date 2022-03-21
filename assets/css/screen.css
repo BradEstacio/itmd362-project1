@@ -63,10 +63,13 @@ label {
 }
 
 input[type="number"] {
-  -webkit-outer-spin-button: none;
-  -webkit-inner-spin-button: none;
   -moz-appearance: textfield;
-  appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 input[type="tel"] {
