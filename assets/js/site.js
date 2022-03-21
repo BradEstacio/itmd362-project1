@@ -69,7 +69,7 @@ function handleFormInputActivity(event) {
   var errorClass = targetElement.name + '-error';
   var errorEl = document.querySelector('.' + errorClass);
 
-  if(targetType === 'text') {
+  if(targetType === 'text' && targetElement.tagName === 'INPUT') {
     if (targetElement.value.length < 3) {
       // Don't add duplicate errors
       if (!errorEl) {
