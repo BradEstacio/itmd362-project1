@@ -168,7 +168,7 @@ fieldset[aria-hidden="true"] {
     grid-area: shipping;
   }
 
-  #price {
+  p {
     display: inline-grid;
   }
 }
@@ -210,10 +210,6 @@ fieldset[aria-hidden="true"] {
   #shipping {
     display: inline-grid;
     grid-row: span 1;
-    grid-column: span 1;
-  }
-
-  #price {
     grid-column: span 1;
   }
 
