@@ -8,17 +8,37 @@
     },
     {
       "label": "tablet",
-      "width": 1024,
-      "height": 768
+      "width": 650,
+      "height": 900
+    },
+    {
+      "label": "desktop",
+      "width": 1920,
+      "height": 1080
     }
   ],
   "onBeforeScript": "puppet/onBefore.js",
   "onReadyScript": "puppet/onReady.js",
   "scenarios": [
     {
-      "label": "BackstopJS Homepage",
-      "url": "https://garris.github.io/BackstopJS/",
-      "misMatchThreshold" : 0.1,
+      "label": "Home page",
+      "url": "http://localhost:8080/",
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Empty payment page",
+      "url": "http://localhost:8080/payment",
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Empty billing page",
+      "url": "http://localhost:8080/billing",
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Empty shipping page",
+      "url": "http://localhost:8080/shipping",
+      "misMatchThreshold" : 0.1
     }
   ],
   "paths": {
