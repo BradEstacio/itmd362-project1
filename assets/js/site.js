@@ -111,7 +111,7 @@ function handleFormInputActivity(event) {
       var cvvCheck = /^[0-9]{3,4}$/;
       if(!cvvCheck.test(targetElement.value)) {
         if(!errorEl) {
-          var errorText = capitalizeFirstLetter(targetElement.name) + 'must be a valid CVV number';
+          var errorText = capitalizeFirstLetter(targetElement.name) + ' must be a valid CVV number';
           errorEl = document.createElement('p');
           errorEl.className = errorClass
           errorEl.innerText = errorText;
