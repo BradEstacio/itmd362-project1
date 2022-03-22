@@ -1,6 +1,6 @@
 'use strict';
 
-var html = document.querySelector('html')
+var html = document.querySelector('html');
 
 // Add a `js` class for any JavaScript-dependent CSS
 // See https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
@@ -58,8 +58,8 @@ function handleFormInputActivity(event) {
   var inputElements = ['INPUT', 'SELECT'];
   var targetElement = event.target;
   var targetType = targetElement.getAttribute('type');
-  var targetName = targetElement.getAttribute('name');
-  if (!inputElements.includes(targetElement.tagName) || targetName === 'billing-address-two' || targetName === 'shipping-address-two') {
+  var errorText = capitalizeFirstLetter(targetElement.name);
+  if (!inputElements.includes(targetElement.tagName) || targetElement.name === 'billing-address-two' || targetElement.name === 'shipping-address-two') {
     return; // this is not an element we care about
   }
 
@@ -73,9 +73,9 @@ function handleFormInputActivity(event) {
     if (targetElement.value.length < 3) {
       // Don't add duplicate errors
       if (!errorEl) {
-        var errorText = capitalizeFirstLetter(targetElement.name) + ' must be at least 3 characters';
+        errorText += ' must be at least 3 characters';
         errorEl = document.createElement('p');
-        errorEl.className = errorClass
+        errorEl.className = errorClass;
         errorEl.innerText = errorText;
         targetElement.before(errorEl);
         submitButton.disabled = true;
@@ -88,13 +88,13 @@ function handleFormInputActivity(event) {
     }
   }
   if(targetType === 'number') {
-    if(targetName === 'card-number') {
+    if(targetElement.name === 'card-number') {
       var ccCheck = /^(?:(4[0-9]{12}(?:[0-9]{3})?)|(5[1-5][0-9]{14})|(6(?:011|5[0-9]{2})[0-9]{12})|(3[47][0-9]{13})|(3(?:0[0-5]|[68][0-9])[0-9]{11})|((?:2131|1800|35[0-9]{3})[0-9]{11}))$/;
       if(!ccCheck.test(targetElement.value)) {
         if(!errorEl) {
-          var errorText = capitalizeFirstLetter(targetElement.name) + ' must be a valid credit card';
+          errorText += ' must be a valid credit card';
           errorEl = document.createElement('p');
-          errorEl.className = errorClass
+          errorEl.className = errorClass;
           errorEl.innerText = errorText;
           targetElement.before(errorEl);
           submitButton.disabled = true;
@@ -107,13 +107,13 @@ function handleFormInputActivity(event) {
         }
       }
     }
-    if(targetName === 'cvv') {
+    if(targetElement.name === 'cvv') {
       var cvvCheck = /^[0-9]{3,4}$/;
       if(!cvvCheck.test(targetElement.value)) {
         if(!errorEl) {
-          var errorText = capitalizeFirstLetter(targetElement.name) + ' must be a valid CVV number';
+          errorText += ' must be a valid CVV number';
           errorEl = document.createElement('p');
-          errorEl.className = errorClass
+          errorEl.className = errorClass;
           errorEl.innerText = errorText;
           targetElement.before(errorEl);
           submitButton.disabled = true;
@@ -126,13 +126,13 @@ function handleFormInputActivity(event) {
         }
       }
     }
-    if(targetName === 'billing-zip' || targetName === 'shipping-zip') {
+    if(targetElement.name === 'billing-zip' || targetElement.name === 'shipping-zip') {
       var zipCheck = /^\d{5}(?:[-\s]\d{4})?$/;
       if(!zipCheck.test(targetElement.value)) {
         if(!errorEl) {
-          var errorText = capitalizeFirstLetter(targetElement.name) + ' must be a valid ZIP code';
+          errorText += ' must be a valid ZIP code';
           errorEl = document.createElement('p');
-          errorEl.className = errorClass
+          errorEl.className = errorClass;
           errorEl.innerText = errorText;
           targetElement.before(errorEl);
           submitButton.disabled = true;
@@ -147,12 +147,12 @@ function handleFormInputActivity(event) {
     }
   }
   if(targetType === 'tel') {
-    var zipCheck = /\d{9}/;
-    if(!zipCheck.test(targetElement.value)) {
+    var telCheck = /\d{9}/;
+    if(!telCheck.test(targetElement.value)) {
       if(!errorEl) {
-        var errorText = capitalizeFirstLetter(targetElement.name) + ' must be a valid telephone number';
+        errorText += ' must be a valid telephone number';
         errorEl = document.createElement('p');
-        errorEl.className = errorClass
+        errorEl.className = errorClass;
         errorEl.innerText = errorText;
         targetElement.before(errorEl);
         submitButton.disabled = true;
