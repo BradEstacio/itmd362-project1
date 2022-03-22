@@ -15,7 +15,7 @@
 module.exports = {
   // An array of folders (excluding subfolders) where your tests are located;
   // if this is not specified, the test source must be passed as the second argument to the test runner.
-  src_folders: [],
+  src_folders: ['tests/'],
 
   // See https://nightwatchjs.org/guide/working-with-page-objects/using-page-objects.html
   page_objects_path: ['node_modules/nightwatch/examples/pages/'],
@@ -28,7 +28,7 @@ module.exports = {
 
   // See https://nightwatchjs.org/guide/extending-nightwatch/plugin-api.html
   plugins: [],
-  
+
   // See https://nightwatchjs.org/guide/#external-globals
   globals_path : '',
 
@@ -55,7 +55,7 @@ module.exports = {
       }
     },
 
-    
+
 
     firefox: {
       desiredCapabilities : {
