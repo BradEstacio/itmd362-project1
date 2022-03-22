@@ -172,7 +172,7 @@ fieldset[aria-hidden="true"] {
     grid-area: shipping-nav;
   }
 
-  p {
+  .price {
     display: inline-grid;
   }
 }
