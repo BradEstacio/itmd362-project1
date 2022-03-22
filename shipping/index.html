@@ -8,7 +8,7 @@
 </head>
 <body>
   <header id="header">
-    <h1>Simple Succulent Shop</h1>
+    <h1 id="shop-name">Simple Succulent Shop</h1>
     <nav>
       <ul id="nav-buttons">
         <li><a class="nav-button" id="home-nav" href="../">Home</a></li>
@@ -23,8 +23,8 @@
     <a href="../billing/" class="back-button" id="back-button">Back to Billing</a>
 
     <aside id="summary">
-      <h1 class="line">Summary</h1>
       <section>
+        <h2 class="line">Summary</h2>
         <ul>
           <li>Item Total: $39.94</li>
           <li>Tax: $2.40</li>
@@ -35,7 +35,7 @@
     </aside>
 
     <form name="shipping" id="form" action="../" method="get" aria-labelledby="form-label" aria-live="polite" aria-relevant="additions">
-      <h1 class="line">Shipping</h1>
+      <h1 class="line" id="form-label">Shipping</h1>
 
       <fieldset name="same-address">
         <ol>
@@ -54,7 +54,7 @@
           </li>
           <li>
             <label for="shipping-address">Street Address</label>
-            <input type="text" name="shipping-address" id="shipping-address" autocomplete="street-address" required />
+            <input type="text" name="shipping-address" id="shipping-address" autocomplete="address-line1" required />
           </li>
           <li>
             <label for="shipping-address-two">Apartment, Suite, etc. (Optional)</label>
@@ -66,7 +66,7 @@
           </li>
           <li>
             <label for="shipping-state">State</label>
-            <select name="shipping-state" id="shipping-state" required>
+            <select name="shipping-state" id="shipping-state" required />
               <option value="">State</option>
               <option value="AL">Alabama</option>
               <option value="AK">Alaska</option>
@@ -123,7 +123,7 @@
           </li>
           <li>
             <label for="shipping-zip">Zip Code</label>
-            <input type="number" name="shipping-zip" id="shipping-zip" autocomplete="postal-code" required />
+            <input type="number" name="shipping-zip" id="shipping-zip" autocomplete="on" required />
           </li>
           <li>
             <label for="shipping-phone">Phone Number</label>

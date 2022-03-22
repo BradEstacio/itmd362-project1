@@ -23,9 +23,9 @@
     <a href="../" class="back-button" id="back-button">Back to Home Page</a>
 
     <aside id="summary">
-      <h1 class="line">Cart</h1>
       <section id="items">
-        <ul name="cart-list">
+        <h2 class="line">Cart</h2>
+        <ul>
           <li>Albuca spiralis <p class="price">- $10.49</p></li>
           <li>Echeveria "Perle von Nurnberg" <p class="price">- $4.99</p></li>
           <li>Kalanchoe tomentosa "Panda Plant" <p class="price">- $4.99</p></li>
@@ -37,7 +37,7 @@
     </aside>
 
     <form name="payment" id="form" action="../billing/" method="get" aria-labelledby="form-label" aria-live="polite" aria-relevant="additions">
-      <h1 class="line">Payment</h1>
+      <h1 class="line" id="form-label">Payment</h1>
 
       <ol>
         <li>
@@ -65,7 +65,7 @@
             <option value="11">11</option>
             <option value="12">12</option>
           </select>
-          <select type="text" name="expiration-year" id="expiration-year" required>
+          <select name="expiration-year" id="expiration-year" required>
               <option value="">YY</option>
               <option value="22">22</option>
               <option value="23">23</option>
