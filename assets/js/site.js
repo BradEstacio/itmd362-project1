@@ -72,7 +72,7 @@ function handleFormInputActivity(event) {
   var zipCheck = /^\d{5}(?:[-\s]\d{4})?$/;
   var telCheck = /\d{9}/;
 
-  if (!inputElements.includes(targetElement.tagName) || targetElement.name === 'billing-address-two' || targetElement.name === 'shipping-address-two') {
+  if (!inputElements.includes(targetElement.tagName) || targetElement.name === 'billing-address-two' || targetElement.name === 'shipping-address-two' || targetElement.name === 'billing-city' || targetElement.name === 'shipping-city') {
     return; // this is not an element we care about
   }
 

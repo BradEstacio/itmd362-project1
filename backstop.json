@@ -139,10 +139,6 @@
           "keyPress": "A"
         },
         {
-          "selector": "#billing-city",
-          "keyPress": "N"
-        },
-        {
           "selector": "#billing-zip",
           "keyPress": "7777777"
         },
