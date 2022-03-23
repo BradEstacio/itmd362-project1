@@ -36,6 +36,7 @@ if(html.id === 'shipping') {
   formShipping.addEventListener('input', debounce(handleFormInputActivity, 850));
   formShipping.addEventListener('change', handleFormInputActivity);
   formShipping.addEventListener('submit', handleFormSubmission);
+  formShipping.addEventListener('submit', localStorage.clear());
 
   newAddressFieldset = document.querySelector('fieldset[name="shipping-address"]');
   newAddressCheckbox = document.querySelector('#shipping-is-billing');
