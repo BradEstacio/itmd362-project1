@@ -1,6 +1,11 @@
 'use strict';
 
 var html = document.querySelector('html');
+var formPayment;
+var formBilling;
+var formShipping;
+var newAddressFieldset;
+var newAddressCheckbox;
 
 // Add a `js` class for any JavaScript-dependent CSS
 // See https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
@@ -8,32 +13,32 @@ html.classList.add('js');
 
 // Logic for payment form
 if(html.id === 'payment') {
-  var form = document.querySelector('form[name="payment"]');
-  restoreFormDataFromLocalStorage(form.name);
-  form.addEventListener('input', debounce(handleFormInputActivity, 850));
-  form.addEventListener('change', handleFormInputActivity);
-  form.addEventListener('submit', handleFormSubmission);
+  formPayment = document.querySelector('form[name="payment"]');
+  restoreFormDataFromLocalStorage(formPayment.name);
+  formPayment.addEventListener('input', debounce(handleFormInputActivity, 850));
+  formPayment.addEventListener('change', handleFormInputActivity);
+  formPayment.addEventListener('submit', handleFormSubmission);
 }
 
 // Logic for billing form
 if(html.id === 'billing') {
-  var form = document.querySelector('form[name="billing"]');
-  restoreFormDataFromLocalStorage(form.name);
-  form.addEventListener('input', debounce(handleFormInputActivity, 850));
-  form.addEventListener('change', handleFormInputActivity);
-  form.addEventListener('submit', handleFormSubmission);
+  formBilling = document.querySelector('form[name="billing"]');
+  restoreFormDataFromLocalStorage(formBilling.name);
+  formBilling.addEventListener('input', debounce(handleFormInputActivity, 850));
+  formBilling.addEventListener('change', handleFormInputActivity);
+  formBilling.addEventListener('submit', handleFormSubmission);
 }
 
 // Logic for shipping form
 if(html.id === 'shipping') {
-  var form = document.querySelector('form[name="shipping"]');
-  restoreFormDataFromLocalStorage(form.name);
-  form.addEventListener('input', debounce(handleFormInputActivity, 850));
-  form.addEventListener('change', handleFormInputActivity);
-  form.addEventListener('submit', handleFormSubmission);
+  formShipping = document.querySelector('form[name="shipping"]');
+  restoreFormDataFromLocalStorage(formShipping.name);
+  formShipping.addEventListener('input', debounce(handleFormInputActivity, 850));
+  formShipping.addEventListener('change', handleFormInputActivity);
+  formShipping.addEventListener('submit', handleFormSubmission);
 
-  var newAddressFieldset = document.querySelector('fieldset[name="shipping-address"]');
-  var newAddressCheckbox = document.querySelector('#shipping-is-billing');
+  newAddressFieldset = document.querySelector('fieldset[name="shipping-address"]');
+  newAddressCheckbox = document.querySelector('#shipping-is-billing');
 
   newAddressFieldset.setAttribute('disabled', 'disabled');
   newAddressFieldset.setAttribute('aria-hidden', 'true');
@@ -50,25 +55,28 @@ if(html.id === 'shipping') {
   });
 }
 
-/*
-  Callback Functions
-*/
+/* Callback Functions */
 
 function handleFormInputActivity(event) {
   var inputElements = ['INPUT', 'SELECT'];
   var targetElement = event.target;
   var targetType = targetElement.getAttribute('type');
   var errorText = capitalizeFirstLetter(targetElement.name);
+  var submitButton = document.getElementById('submit');
+  var errorClass = targetElement.name + '-error';
+  var errorEl = document.querySelector('.' + errorClass);
+
+  // Regex for validating inputs
+  var ccCheck = /^(?:(4[0-9]{12}(?:[0-9]{3})?)|(5[1-5][0-9]{14})|(6(?:011|5[0-9]{2})[0-9]{12})|(3[47][0-9]{13})|(3(?:0[0-5]|[68][0-9])[0-9]{11})|((?:2131|1800|35[0-9]{3})[0-9]{11}))$/;
+  var cvvCheck = /^[0-9]{3,4}$/;
+  var zipCheck = /^\d{5}(?:[-\s]\d{4})?$/;
+  var telCheck = /\d{9}/;
+
   if (!inputElements.includes(targetElement.tagName) || targetElement.name === 'billing-address-two' || targetElement.name === 'shipping-address-two') {
     return; // this is not an element we care about
   }
 
-  var submitButton = document.getElementById('submit');
-
   // Implicit 'else', care of the `return;` statement above...
-  var errorClass = targetElement.name + '-error';
-  var errorEl = document.querySelector('.' + errorClass);
-
   if(targetType === 'text' && targetElement.tagName === 'INPUT') {
     if (targetElement.value.length < 3) {
       // Don't add duplicate errors
@@ -89,7 +97,6 @@ function handleFormInputActivity(event) {
   }
   if(targetType === 'number') {
     if(targetElement.name === 'card-number') {
-      var ccCheck = /^(?:(4[0-9]{12}(?:[0-9]{3})?)|(5[1-5][0-9]{14})|(6(?:011|5[0-9]{2})[0-9]{12})|(3[47][0-9]{13})|(3(?:0[0-5]|[68][0-9])[0-9]{11})|((?:2131|1800|35[0-9]{3})[0-9]{11}))$/;
       if(!ccCheck.test(targetElement.value)) {
         if(!errorEl) {
           errorText += ' must be a valid credit card';
@@ -99,8 +106,7 @@ function handleFormInputActivity(event) {
           targetElement.before(errorEl);
           submitButton.disabled = true;
         }
-      }
-      else {
+      } else {
         if (errorEl) {
           errorEl.remove();
           submitButton.disabled = false;
@@ -108,7 +114,6 @@ function handleFormInputActivity(event) {
       }
     }
     if(targetElement.name === 'cvv') {
-      var cvvCheck = /^[0-9]{3,4}$/;
       if(!cvvCheck.test(targetElement.value)) {
         if(!errorEl) {
           errorText += ' must be a valid CVV number';
@@ -118,8 +123,7 @@ function handleFormInputActivity(event) {
           targetElement.before(errorEl);
           submitButton.disabled = true;
         }
-      }
-      else {
+      } else {
         if (errorEl) {
           errorEl.remove();
           submitButton.disabled = false;
@@ -127,7 +131,6 @@ function handleFormInputActivity(event) {
       }
     }
     if(targetElement.name === 'billing-zip' || targetElement.name === 'shipping-zip') {
-      var zipCheck = /^\d{5}(?:[-\s]\d{4})?$/;
       if(!zipCheck.test(targetElement.value)) {
         if(!errorEl) {
           errorText += ' must be a valid ZIP code';
@@ -137,8 +140,7 @@ function handleFormInputActivity(event) {
           targetElement.before(errorEl);
           submitButton.disabled = true;
         }
-      }
-      else {
+      } else {
         if (errorEl) {
           errorEl.remove();
           submitButton.disabled = false;
@@ -147,7 +149,6 @@ function handleFormInputActivity(event) {
     }
   }
   if(targetType === 'tel') {
-    var telCheck = /\d{9}/;
     if(!telCheck.test(targetElement.value)) {
       if(!errorEl) {
         errorText += ' must be a valid telephone number';
@@ -157,8 +158,7 @@ function handleFormInputActivity(event) {
         targetElement.before(errorEl);
         submitButton.disabled = true;
       }
-    }
-    else {
+    } else {
       if (errorEl) {
         errorEl.remove();
         submitButton.disabled = false;
@@ -177,20 +177,19 @@ function handleFormSubmission(event) {
 }
 
 
-/*
-  Core Functions
-*/
+/* Core Functions */
 
 function writeFormDataToLocalStorage(formName, inputElement) {
   var formData = findOrCreateLocalStorageObject(formName);
-
+  var formElements;
+  var i;
   // Set just a single input value
   if (inputElement) {
     formData[inputElement.name] = inputElement.value;
   } else {
     // Set all form input values, e.g., on a submit event
-    var formElements = document.forms[formName].elements;
-    for (var i = 0; i < formElements.length; i++) {
+    formElements = document.forms[formName].elements;
+    for (i = 0; i < formElements.length; i++) {
       // Don't store empty elements, like the submit button
       if (formElements[i].value !== "") {
         formData[formElements[i].name] = formElements[i].value;
@@ -232,26 +231,27 @@ function writeJsonToLocalStorage(keyName, jsObject) {
   localStorage.setItem(keyName, JSON.stringify(jsObject));
 }
 
-function destroyFormDataInLocalStorage(formName) {
-  localStorage.removeItem(formName);
-}
+// function destroyFormDataInLocalStorage(formName) {
+//   localStorage.removeItem(formName);
+// }
 
 function restoreFormDataFromLocalStorage(formName) {
   var jsObject = readJsonFromLocalStorage(formName);
   var formValues = Object.entries(jsObject);
+  var formElements;
+  var i;
+
   if (formValues.length === 0) {
     return; // nothing to restore
   }
-  var formElements = document.forms[formName].elements;
-  for (var i = 0; i < formValues.length; i++) {
+  formElements = document.forms[formName].elements;
+  for (i = 0; i < formValues.length; i++) {
     console.log('Form input key:', formValues[i][0], 'Form input value:', formValues[i][1]);
     formElements[formValues[i][0]].value = formValues[i][1];
   }
 }
 
-/*
-  Utility Functions
-*/
+/* Utility Functions */
 
 function capitalizeFirstLetter(string) {
   var firstLetter = string[0].toUpperCase();
@@ -275,26 +275,26 @@ function debounce(callback, delay) {
       // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
       callback.apply(context, args);
     }, delay);
-  }
+  };
 }
 
 // throttle to slow execution to a certain amount of elapsed time (limit)
-function throttle(callback, limit) {
-  var throttling; // function-scope boolean for testing throttle state
-  return function() {
-    var context = this; // track function-calling context
-    // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
-    var args = arguments; // hold onto arguments object
-    // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments
-
-    // Run the function if not currently throttling
-    if (!throttling) {
-      // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
-      callback.apply(context, args);
-      throttling = true;
-      setTimeout(function() {
-        throttling = false;
-      }, limit);
-    }
-  }
-}
+// function throttle(callback, limit) {
+//   var throttling; // function-scope boolean for testing throttle state
+//   return function() {
+//     var context = this; // track function-calling context
+//     // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
+//     var args = arguments; // hold onto arguments object
+//     // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments
+//
+//     // Run the function if not currently throttling
+//     if (!throttling) {
+//       // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
+//       callback.apply(context, args);
+//       throttling = true;
+//       setTimeout(function() {
+//         throttling = false;
+//       }, limit);
+//     }
+//   };
+// }
