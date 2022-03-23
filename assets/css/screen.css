@@ -149,6 +149,10 @@ fieldset[aria-hidden="true"] {
   width: auto;
 }
 
+#nav-buttons {
+  font-family: Merriweather, serif;
+}
+
 /* 500px / 16px = 31.25em */
 @media screen and (min-width: 31.25em) {
   header {
